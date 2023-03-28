@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <title>ChatBot</title>
+</head>
+<body>
+    
+
+
+    <!-- icon -->
+    <div class="chatBot">
+        <img src="./img/chatbot-icon.png" alt="icon" class="chatBot__icon">
+    </div>
+
+    <!-- chatbox -->
+    <div class="container hide">
+        <div class="container__header">
+            <div class="container__header__objects">
+                <div class="container__header__objects--avatar">
+                <img src="./img/chatbot-icon.png" alt="icon" class="container__header__objects--img">
+                <div class="container__header__objects--img--status"></div>
+            </div>
+
+            <div class="container__header__objects--logo">
+                <p class="container__header__objects--logo--name">ChatBot</p>
+                <p class="container__header__objects--logo--tag">Online</p>
+            </div>
+
+            <div class="container__header__objects--close">
+                <img src="./img/cross.png" class="container__header__objects--cross">
+            </div>
+            </div>
+        </div>
+
+        <!-- chat -->
+        <div class="container__chat">
+            <div class="container__chat--content">
+                <div class="container__chat--message">
+                    <p class="container__chat--message--text">
+                        Hi, it's great to see you!
+                    </p>
+                    <p class="container__chat--message--text">
+                        What information are you looking for?
+                    </p>
+                </div>
+                <div class="container__chat--options">
+                    <button class="container__chat--options--button">Temperature</button>
+                    <button class="container__chat--options--button timeBtn">Time</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- input text -->
+        <div class="container__message">
+            <div class="container__message__input">
+                <input type="text" placeholder="Type your message here" class="container__message__input--text hide"> 
+                <img src="./img/send-icon.png" alt="send" class="container__message__input--img">
+            </div>
+        </div>
+
+        <div class="container__temp hide">
+            <h1 class="container__temp--header">
+                <span class="container__temp--cityName" id="cityName"></span>
+                <div class="value">
+                <span class="container__temp--value" id="temp"></span>&#x2103;</div>
+            </h1>
+
+            <div class="container__temp--content">
+                <p class="container__temp--list">Min Temp: <span id="min_temp"></span>&#x2103;</p>
+            
+            <p class="container__temp--list">Max Temp: <span id="max_temp"></span>&#x2103;</p>
+            
+            <p class="container__temp--list">Humididty: <span id="humidity"></span></p>
+            
+            <p class="container__temp--list">Wind Speed: <span id="wind_speed"></span></p>
+            </div>
+
+            
+        </div>
+
+        <div class="container__time hide">
+            <h1 class="container__time--header">
+                <div class="container__time--cityName" id="placeName"></div>
+                <div class="value">
+                <span class="container__time--value" id="mytime"></span></div>
+            </h1>
+        </div>
+
+        <!-- <div class="container__btn">
+            <button class="container__btn--next hide">Next</button>
+        </div> -->
+
+        <div class="response hide">
+        <div class="container__chat--message">
+            <p class="container__chat--message--text">
+                Hope you like it!
+            </p>
+            <p class="container__chat--message--text">
+                Type any city of your choice..
+            </p>
+        </div>
+
+        <!-- <div class="container__btn">
+            <button class="container__btn--next timeBtn">Time</button>
+            <button class="container__btn--next mainBtn">Back to main</button>
+        </div> -->
+    </div>
+
+    <!-- <div class="container__time hide">
+        <h1 class="container__time--header">
+            <span class="container__time--cityName" id="placeName"></span>
+            <div class="value">
+            <span class="container__time--value" id="mytime"></span></div>
+        </h1>
+    </div>
+    </div> -->
+
+
+    <!-- Custom JS -->
+    <script src="./script.js"></script>
+</body>
+</html>

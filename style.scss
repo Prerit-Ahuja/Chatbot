@@ -1,0 +1,342 @@
+$bgColor: aqua;
+$bgColor2: white;
+$bgColor3: rgb(234, 238, 243);
+$active: rgb(105, 222, 64);
+$border: white;
+$border2: rgb(0, 102, 255);
+$shadow: rgba(0,0,0,.05);
+$textColor: rgb(155, 166, 179);
+$placeholder: rgb(150, 155, 166);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.show{
+    opacity: 1;
+    transition: all .5s ease;
+    transform: translateY(-1%);
+}
+
+.hide{
+    opacity: 0;
+    transition: all .5s ease;
+    transform: translateY(100%);
+}
+
+.growUp{
+    transition: all .5s ease;
+    transform: translateY(-10%);
+    opacity: 1;
+}
+
+.growDown{
+    transition: all .5s ease;
+    transform: translateY(125%);
+    opacity: 0;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+}
+
+// chatbot icon
+.chatBot{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 5;
+
+    &__icon{
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+    }
+}
+
+
+// main  container:
+.container{
+    width: 100%;
+    height: 100%;
+    background-color: $bgColor3;
+    position: absolute;
+    overflow: scroll;
+    
+
+    &__header{
+        width: 100%;
+        height: 100px;
+        background-color: $bgColor2;
+        box-shadow: 0 9.5px 12.7px 0 $shadow;
+        position: sticky;
+        top: 0px;
+        left: 0;
+        z-index: 5;
+
+        &__objects{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 15px;
+
+            &--img{
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+
+                &--status{
+                    border-radius: 50%;
+                    position: absolute;
+                    height: 10px;
+                    width: 10px;
+                    background-color: $active;
+                    border: 1px solid $border;
+                    top: 65%;
+                    left: 85%;
+                }
+            }
+
+            &--avatar{
+                position: relative;
+            }
+
+            &--logo{
+                display: flex;
+                flex-direction: column;
+                text-align: justify;
+                padding-left: 20px;
+
+                &--name{
+                    font-size: 24px;
+                    line-height: 31px;
+                    font-weight: 600;
+                }
+
+                &--tag{
+                    font-size: 15px;
+                    line-height: 19px;
+                    color: $textColor;
+                }
+            }
+
+            &--close{
+                position: absolute;
+                right: 20px;
+            }
+
+            &--cross{
+                height: 25px;
+                width: 25px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__message{
+        width: 100%;
+        position: sticky;
+        top: 92%;
+        z-index: 5;
+
+        &__input{
+            display: flex;
+            align-items: center;
+
+            &--text{
+                width: 100%;
+                height: 55px;
+                outline: none;
+                border: none;
+                padding-left: 20px;
+                box-shadow: 9.5px 9.5px 12.7px 0 $shadow;
+            }
+
+            &--text::placeholder{
+                font-size: 12px;
+                line-height: 16px;
+                font-weight: 600;
+                color: $placeholder;
+            }
+
+            &--img{
+                width: 20px;
+                height: 20px;
+                z-index: 5;
+                position: absolute;
+                right: 15px;
+                opacity: 0.3;
+            }
+        }
+    }
+
+    &__chat{
+        overflow: scroll;
+
+        &--content{
+            width: 100%;
+            height: auto;
+        }
+
+        &--message{
+            max-width: 100%;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+
+            &--text{
+                background-color: $bgColor2;
+                font-size: 15px;
+                line-height: 15px;
+                border-radius: 20px;
+                border-bottom-left-radius: 5px;
+                width: fit-content;
+                padding: 18px;
+                margin-bottom: 5px;
+            }
+        }
+
+        &--options{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+
+            &--button{
+                text-decoration: none;
+                outline: none;
+                border: 1px solid $border2;
+                border-radius: 20px;
+                background-color: $bgColor2;
+                color: $border2;
+                padding: 10px;
+                width: 150px;
+                font-size: 16px;
+                line-height: 20px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__temp{
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: 0px 20px 20px 20px;
+        border: 1px solid $bgColor2;
+        border-radius: 20px;
+        background-color: $border;
+        box-shadow: 10px 9.5px 12.7px 0 $shadow;
+
+        &--header{
+            width: 100%;
+            padding: 20px;
+            border: 1px solid $textColor;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        &--cityName{
+            color: $border2;
+        }
+
+        &--value{
+            font-size: 45px;
+            color: $border2;
+        }
+
+        &--content{
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        &--list{
+            width: 50%;
+            font-size: 20px;
+            padding: 10px;
+            font-weight: 600;
+            opacity: 0.5;
+        }
+    }
+
+    &__btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 100px;
+
+        &--next{
+            text-decoration: none;
+            outline: none;
+            border: 1px solid $border2;
+            border-radius: 20px;
+            background-color: $bgColor2;
+            color: $border2;
+            padding: 10px;
+            width: 150px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+
+    &__time{
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        margin: 0px 20px 150px 20px;
+        border: 1px solid $bgColor2;
+        border-radius: 20px;
+        background-color: $border;
+        box-shadow: 10px 9.5px 12.7px 0 $shadow;
+        position: absolute;
+        top: 400px;
+
+
+        &--header{
+            width: 100%;
+            padding: 20px;
+            border: 1px solid $textColor;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        &--cityName{
+            color: $border2;
+        }
+
+        &--value{
+            font-size: 45px;
+            color: $border2;
+        }
+    }
+}
+
+.response{
+    margin-top: 20px;
+}
+
+@media(min-width: 768px){
+    .container{
+        width: 40%;
+        position: absolute;
+        right: 0;
+        
+        
+    }
+}
